@@ -1,5 +1,5 @@
 # genetic_algorithm_TSP
-Genetic algorithm in a header file for finding a good approximate solution to a travelling salesman problem.
+A genetic algorithm in a header file for finding a good approximate solution to a travelling salesman style problem. The header file also include facilities for somewhat preparing the data ready to be passed into the algorithm.
 
 ## 0. Proposed works
 
@@ -11,7 +11,7 @@ Genetic algorithm in a header file for finding a good approximate solution to a 
 - main.cpp:
 - test_main-GA_TSP.cpp:
 
-### 2 Dependencies
+## 2. Dependencies
 
 - GA_TSP.h: utilizes C++11 features and the standard template library (STL).
 - tests/test_main-GA_TSP.cpp: utilizes the Boost Unit Test Framework.
