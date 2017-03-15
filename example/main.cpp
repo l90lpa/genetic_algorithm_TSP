@@ -9,29 +9,25 @@
 #include <iostream>
 #include "GA_TSP.h"
 
-
-
-
-
 int main(int argc, const char * argv[])
 {
-    std::string fileName = argv[1];
+    // COMMON SETUP
     srand(static_cast<unsigned int>(time(0)));
     rand();
     
-    std::vector<Vertex> points;
+    // SETUP for taking in the data from a CSV file where each row is a vertex (point)
+    std::string fileName = argv[1];
+    std::vector<Vertex> pointsOne;
+    initVetices(pointsOne, 3, 12, fileName);
+ 
+    Genome bestOne = GA_TSP(pointsOne, 3000, 0.4, 1, 100);
     
-    initVetices(points, 3, 12, fileName);
-    for(int i = 0; i < 12; ++i)
-    {
-        for(int j = 0; j < 3; ++j)
-        {
-            std::cout << (points[i].getCoordinate())[j] << ", ";
-        }
-        std::cout << '\n';
-    }
+    // SETUP for taking in the data from user input via std::cin
+    std::vector<Vertex> pointsTwo;
+    initVetices(pointsTwo, 2, 6);
+ 
+    Genome bestTwo = GA_TSP(pointsTwo, 100, 0.3, 0.7, 100);
     
-    Genome best = GA_TSP(points, 3000, 0.4, 1, 100);
     
     return 0;
 }
